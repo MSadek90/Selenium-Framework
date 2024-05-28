@@ -10,20 +10,20 @@ public class Main {
     WebDriver driver;
     @BeforeTest
     public void openBrowser() {
-        driver = new EdgeDriver();
+        //driver = new EdgeDriver();
     }
-    @Test(priority = 2)
+    @Test(priority = 2, dependsOnMethods = {"test2"})
     public void test1() {
         System.out.println("Test_1");
     }
-    @Test(priority = 1,enabled = false)
+    @Test(priority = 1)
     public void test2() {
         System.out.println("Test_2");
     }
 
     @AfterTest
     public void afterTest() {
-        System.out.println("Test_2");
+        System.out.println("Test_3");
     }
 
 
