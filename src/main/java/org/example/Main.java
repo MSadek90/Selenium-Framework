@@ -12,11 +12,11 @@ public class Main {
     public void openBrowser() {
         driver = new EdgeDriver();
     }
-    @Test
+    @Test(priority = 2)
     public void test1() {
         System.out.println("Test_1");
     }
-    @Test
+    @Test(priority = 1,enabled = false)
     public void test2() {
         System.out.println("Test_2");
     }
