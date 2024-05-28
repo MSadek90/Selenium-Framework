@@ -8,17 +8,25 @@ import org.testng.annotations.Test;
 
 public class Main {
     WebDriver driver;
-    @BeforeTest
+    @BeforeTest(groups = {"regression"})
     public void openBrowser() {
-        //driver = new EdgeDriver();
+        driver = new EdgeDriver();
     }
-    @Test(priority = 2, dependsOnMethods = {"test2"})
-    public void test1() {
-        System.out.println("Test_1");
+    @Test(groups = {"regression"})
+    public void test01() {
+        System.out.println("regression group");
     }
-    @Test(priority = 1)
-    public void test2() {
-        System.out.println("Test_2");
+    @Test(groups = {"regression"})
+    public void test02() {
+        System.out.println("regression group");
+    }
+    @Test(groups = {"confirmation"})
+    public void test03() {
+        System.out.println("confirmation group");
+    }
+    @Test(groups = {"confirmation"})
+    public void test04() {
+        System.out.println("confirmation group");
     }
 
     @AfterTest
