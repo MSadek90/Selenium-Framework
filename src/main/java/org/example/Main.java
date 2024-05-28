@@ -7,13 +7,29 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class Main {
+    WebDriver driver;
+    @BeforeTest
+    public void openBrowser() {
+        driver = new EdgeDriver();
+    }
+    @Test
+    public void test1() {
+        System.out.println("Test_1");
+    }
+    @Test
+    public void test2() {
+        System.out.println("Test_2");
+    }
 
-    public static void main(String[] args) {
-        WebDriver driver = new EdgeDriver();
+    @AfterTest
+    public void afterTest() {
+        System.out.println("Test_2");
+    }
+
 
         
 
-    }
+
 
 
 }
